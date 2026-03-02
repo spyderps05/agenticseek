@@ -37,9 +37,9 @@ REM Generate secret key
 for /f %%i in ('powershell -command "[System.Web.Security.Membership]::GeneratePassword(64,0)"') do set SEARXNG_SECRET_KEY=%%i
 
 if "%1"=="full" (
-    docker compose up -d backend
+    docker compose up -d --build backend
     timeout /t 5 /nobreak >nul
-    docker compose --profile full up
+    docker compose --profile full up --build -d
 ) else (
-    docker compose --profile core up
+    docker compose --profile core up --build -d
 )

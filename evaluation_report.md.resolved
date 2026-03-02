@@ -1,0 +1,51 @@
+# Codebase Evaluation & Comparison with Manus AI
+
+## 1. Overview of Present Codebase
+The `agenticseek` codebase is a multi-agent system combining a React frontend (`frontend/spydra-front`) and a Python backend (`sources/`). 
+- **Architecture**: A routing mechanism (`AgentRouter`) classifies user intents and delegates tasks to specialized sub-agents (`PlannerAgent`, `CoderAgent`, `CasualAgent`, `FileAgent`, `BrowserAgent`).
+- **Orchestration**: The `PlannerAgent` breaks down complex requests into JSON-based plans and delegates sub-tasks, updating the overarching plan dynamically dynamically based on success or failure.
+- **Execution**: Code block execution natively relies on local interpreters (e.g., `BashInterpreter`, `PyInterpreter`) utilizing Python's `subprocess` module.
+
+## 2. How Manus AI Works
+Manus AI operates as a fully autonomous, multi-agent cloud AI assistant. Its distinguishing characteristics are:
+- **Secure Sandboxing**: Executes complex tasks and unverified code continuously in isolated, disposable virtual environments (Linux cloud sandboxes).
+- **Advanced Web Automation**: Browses the web dynamically like a human visitor to interact with multifaceted web apps, bypass simple hurdles, extract data, and fill forms.
+- **"Manus's Computer" UI**: Features a highly transparent side panel exposing the AI's internal reasoning, real-time steps, agent delegations, and live terminal logs.
+- **Asynchronous Autonomy**: Runs multi-hour tasks entirely in the background, notifying users upon workflow completion even if the user goes offline.
+- **Multimodal capabilities**: Processes images, code, and structured documents holistically to inform decisions.
+
+## 3. Recommended Features to Add (Manus-Inspired Improvements)
+
+To elevate your codebase closer to the capabilities of Manus AI, consider implementing the following features:
+
+### A. Secure Execution Sandbox (Priority: High)
+**Current State**: Scripts and shell commands are run directly on the host OS via `subprocess` (e.g., in `BashInterpreter.py`). Despite basic text-based safety checks (`is_any_unsafe`), this is highly vulnerable to destructive actions or dependency conflicts.
+**Improvement**: 
+- **Docker Integration**: Wrap the code execution interpreters so they spawn temporary, isolated Docker containers (or microVMs) for each task. This allows the AI to freely install dependencies (`apt-get`, `pip install`), manipulate the filesystem, and execute arbitrary code without any risk to your underlying host machine.
+
+### B. "Glass Box" UI Transparency (Priority: High)
+**Current State**: The backend logs rich data using console outputs (`pretty_print`, `logger`), but the frontend user interface likely treats the AI as a traditional "black box" chatbot.
+**Improvement**: 
+- **Manus-like Side Panel**: Enhance the React frontend (`spydra-front`) to include a transparent runtime panel.
+- **WebSocket Streaming**: Stream the `PlannerAgent`'s JSON plans, sub-agent assignments, and live `stdout/stderr` from the tools directly to the UI. Construct a live visual tree or timeline of `Task -> Subtasks -> Current Action` so the user knows exactly what the agent is doing at any given second.
+
+### C. Advanced State and Persistent Memory (Priority: Medium)
+**Current State**: Memory is handled via a naive `Memory` class, seemingly retaining only recent conversational interactions.
+**Improvement**: 
+- **Vector Database**: Implement a Vector DB (like ChromaDB, Qdrant, or Pinecone).
+- **Long-Term Recall**: Enable the AI to permanently store and retrieve past projects, user preferences, API keys, and successfully completed workflows across system reboots, giving it contextual awareness over time.
+
+### D. Multi-Modal & Vision Agents (Priority: Medium)
+**Current State**: Primarily handles text and code-based generation/execution.
+**Improvement**:
+- **Visual Web Browsing**: Give the `BrowserAgent` "eyes". Use Vision-Language Models (like GPT-4o or Claude 3.5 Sonnet) combined with Playwright/Puppeteer to take screenshots of the web pages, evaluate the UI visually, and infer interaction coordinates. This makes navigating complex, JS-heavy web apps far more robust than relying solely on DOM parsing.
+
+### E. Reflection and Critic Sub-Agents (Priority: Medium)
+**Current State**: `PlannerAgent` only reschedules or adjusts tasks *after* an execution fails (by parsing the error code/traceback).
+**Improvement**:
+- **Proactive ReviewerAgent**: Introduce a dedicated "Critic" or "Reviewer" agent. Before actually running unverified code or returning a final answer, the `CoderAgent` passes its output to the `ReviewerAgent` for static analysis. The Reviewer checks for logic flaws, security issues, or unhandled edge cases, heavily improving the first-run success rate.
+
+### F. Asynchronous Background Workers (Priority: Low)
+**Current State**: Assumed to be a synchronous request-response or simple long-polling web application.
+**Improvement**:
+- **Task Queues**: Implement a robust task queueing system (like Celery + Redis). This allows the human user to submit an extensive task (e.g., "Scrape all local real estate listings, analyze trends, and build a functioning React dashboard"), close their browser, and return hours later to a finished product or an email notification.

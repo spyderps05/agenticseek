@@ -4,14 +4,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="agenticSeek",
+    name="spydra",
     version="0.1.0",
-    author="Fosowl",
+    author="Spyder Solutions",
     author_email="mlg.fcu@gmail.com",
     description="The open, local alternative to ManusAI",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Fosowl/agenticSeek",
+    url="https://github.com/Spyder Solutions/spydra",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
@@ -67,7 +67,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "agenticseek=main:main",
+            "spydra=main:main",
         ],
     },
     classifiers=[

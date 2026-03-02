@@ -3,11 +3,11 @@ FROM node:18
 WORKDIR /app
 
 # Install dependencies
-COPY agentic-seek-front/package.json agentic-seek-front/package-lock.json ./
+COPY spydra-front/package.json spydra-front/package-lock.json ./
 RUN npm install
 
 # Copy application code
-COPY agentic-seek-front/ .
+COPY spydra-front/ .
 
 # Expose port
 EXPOSE 3000

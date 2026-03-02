@@ -3,8 +3,8 @@ __pycache__/
 *.py[cod]
 
 # Virtual environments
-agentic_seek_env/
-.agentic_seek_env/
+spydra_env/
+.spydra_env/
 
 .env
 

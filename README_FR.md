@@ -1,20 +1,20 @@
-# AgenticSeek : Une Alternative Privée et Locale à Manus
+# Spydra : Une Alternative Privée et Locale à Manus
 
 <p align="center">
-<img align="center" src="./media/agentic_seek_logo.png" width="300" height="300" alt="Agentic Seek Logo">
+<img align="center" src="./media/spydra_logo.png" width="300" height="300" alt="Spydra Logo">
 <p>
 
   English | [中文](./README_CHS.md) | [繁體中文](./README_CHT.md) | [Français](./README_FR.md) | [日本語](./README_JP.md) | [Português (Brasil)](./README_PTBR.md) | [Español](./README_ES.md)
 
 *Un assistant IA avec reconnaissance vocale qui est une **alternative 100% locale à Manus AI**, navigue de manière autonome sur le web, écrit du code et planifie des tâches tout en gardant toutes les données sur votre appareil. Conçu pour des modèles de raisonnement locaux, il fonctionne entièrement sur votre matériel, garantissant une confidentialité totale et zéro dépendance au cloud.*
 
-[![Visiter AgenticSeek](https://img.shields.io/static/v1?label=Website&message=AgenticSeek&color=blue&style=flat-square)](https://fosowl.github.io/agenticSeek.html) ![License](https://img.shields.io/badge/license-GPL--3.0-green) [![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289DA?logo=discord&logoColor=white)](https://discord.gg/8hGDaME3TC) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/fosowl.svg?style=social&label=Update%20%40Fosowl)](https://x.com/Martin993886460) [![GitHub stars](https://img.shields.io/github/stars/Fosowl/agenticSeek?style=social)](https://github.com/Fosowl/agenticSeek/stargazers)
+[![Visiter Spydra](https://img.shields.io/static/v1?label=Website&message=Spydra&color=blue&style=flat-square)](https://spyder-solutions.github.io/spydra.html) ![License](https://img.shields.io/badge/license-GPL--3.0-green) [![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289DA?logo=discord&logoColor=white)](https://discord.gg/8hGDaME3TC) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/spyder-solutions.svg?style=social&label=Update%20%40Spyder Solutions)](https://x.com/Ahmed Arsalan) [![GitHub stars](https://img.shields.io/github/stars/Spyder Solutions/spydra?style=social)](https://github.com/Spyder Solutions/spydra/stargazers)
 
-### Pourquoi choisir AgenticSeek ?
+### Pourquoi choisir Spydra ?
 
 * 🔒 Totalement Local & Privé - Tout fonctionne sur votre machine, sans cloud, sans partage de données. Vos fichiers, conversations et recherches restent privés.
 
-* 🌐 Navigation Web Intelligente - AgenticSeek peut naviguer sur Internet de manière autonome : rechercher, lire, extraire des informations, remplir des formulaires web, le tout sans intervention manuelle.
+* 🌐 Navigation Web Intelligente - Spydra peut naviguer sur Internet de manière autonome : rechercher, lire, extraire des informations, remplir des formulaires web, le tout sans intervention manuelle.
 
 * 💻 Assistant de Programmation Autonome - Besoin de code ? Il peut écrire, déboguer et exécuter des programmes en Python, C, Go, Java et plus encore, sans supervision.
 
@@ -26,7 +26,7 @@
 
 ### **Démo**
 
-> *Peux-tu rechercher le projet agenticSeek, apprendre quelles compétences sont nécessaires, puis ouvrir CV_candidates.zip et me dire lesquels correspondent le mieux au projet ?*
+> *Peux-tu rechercher le projet spydra, apprendre quelles compétences sont nécessaires, puis ouvrir CV_candidates.zip et me dire lesquels correspondent le mieux au projet ?*
 
 https://github.com/user-attachments/assets/b8ca60e9-7b3b-4533-840e-08f9ac426316
 
@@ -49,8 +49,8 @@ Avant de commencer, assurez-vous d'avoir installé :
 ### 1. **Cloner le dépôt et configurer**
 
 ```sh
-git clone https://github.com/Fosowl/agenticSeek.git
-cd agenticSeek
+git clone https://github.com/Spyder Solutions/spydra.git
+cd spydra
 mv .env.example .env
 ```
 
@@ -75,7 +75,7 @@ Mettez à jour le fichier `.env` selon vos besoins :
 
 - **SEARXNG_BASE_URL**: Gardez inchangé sauf si vous exécutez en mode CLI sur l'hôte.
 - **REDIS_BASE_URL**: Gardez inchangé 
-- **WORK_DIR**: Chemin vers le répertoire de travail local. AgenticSeek pourra lire et interagir avec ces fichiers.
+- **WORK_DIR**: Chemin vers le répertoire de travail local. Spydra pourra lire et interagir avec ces fichiers.
 - **OLLAMA_PORT**: Numéro de port pour le service Ollama.
 - **LM_STUDIO_PORT**: Numéro de port pour le service LM Studio.
 - **CUSTOM_ADDITIONAL_LLM_PORT**: Port pour tout service LLM personnalisé supplémentaire.
@@ -104,7 +104,7 @@ Si vous voyez des informations sur votre installation Docker, cela fonctionne co
 
 Consultez la [Liste des fournisseurs locaux](#liste-des-fournisseurs-locaux) ci-dessous pour un résumé.
 
-Prochaine étape: [Exécuter AgenticSeek localement](#démarrer-les-services-et-exécuter)
+Prochaine étape: [Exécuter Spydra localement](#démarrer-les-services-et-exécuter)
 
 *Si vous rencontrez des problèmes, consultez la section [Dépannage](#dépannage).*
 *Si votre matériel ne peut pas exécuter LLM localement, consultez [Configuration pour exécuter avec une API](#configuration-pour-exécuter-avec-une-api).*
@@ -169,7 +169,7 @@ Ne copiez et collez pas directement la configuration d'exemple, car les commenta
 | lm-studio  | Oui    | Exécute LLM localement avec LM studio (définir `provider_name` = `lm-studio`)|
 | openai    | Oui     |  Utilise une API compatible avec openai (ex: serveur llama.cpp)  |
 
-Prochaine étape: [Démarrer les services et exécuter AgenticSeek](#démarrer-les-services-et-exécuter)  
+Prochaine étape: [Démarrer les services et exécuter Spydra](#démarrer-les-services-et-exécuter)  
 
 *Si vous rencontrez des problèmes, consultez la section [Dépannage](#dépannage).*
 *Si votre matériel ne peut pas exécuter LLM localement, consultez [Configuration pour exécuter avec une API](#configuration-pour-exécuter-avec-une-api).*
@@ -235,7 +235,7 @@ provider_server_address = # Lorsque is_local = False, généralement ignoré ou 
 *   Les tâches de codage/bash peuvent échouer avec Gemini, car il a tendance à ignorer notre format de prompt optimisé pour Deepseek r1.
 *   Lorsque `is_local = False`, `provider_server_address` dans `config.ini` n'est généralement pas utilisé, car les endpoints d'API sont généralement gérés par les bibliothèques du fournisseur correspondant.
 
-Prochaine étape: [Démarrer les services et exécuter AgenticSeek](#démarrer-les-services-et-exécuter)
+Prochaine étape: [Démarrer les services et exécuter Spydra](#démarrer-les-services-et-exécuter)
 
 *Si vous rencontrez des problèmes, consultez la section **Problèmes connus***
 
@@ -245,7 +245,7 @@ Prochaine étape: [Démarrer les services et exécuter AgenticSeek](#démarrer-l
 
 ## Démarrer les services et exécuter
 
-Par défaut, AgenticSeek s'exécute entièrement dans Docker.
+Par défaut, Spydra s'exécute entièrement dans Docker.
 
 **Option 1:** Exécuter dans Docker avec interface web:
 
@@ -264,7 +264,7 @@ start start_services.cmd full # Windows
 
 Allez à `http://localhost:3000/` et vous devriez voir l'interface web.
 
-*Dépannage du démarrage des services:* Si ces scripts échouent, assurez-vous que Docker Engine fonctionne et que Docker Compose (V2, `docker compose`) est correctement installé. Vérifiez les messages d'erreur dans la sortie du terminal. Consultez [FAQ: Aide ! J'obtiens des erreurs lors de l'exécution d'AgenticSeek ou de ses scripts.](#faq-dépannage)
+*Dépannage du démarrage des services:* Si ces scripts échouent, assurez-vous que Docker Engine fonctionne et que Docker Compose (V2, `docker compose`) est correctement installé. Vérifiez les messages d'erreur dans la sortie du terminal. Consultez [FAQ: Aide ! J'obtiens des erreurs lors de l'exécution d'Spydra ou de ses scripts.](#faq-dépannage)
 
 **Option 2:** Mode CLI:
 
@@ -323,7 +323,7 @@ Quelques exemples d'utilisation:
 
 *Notez que le remplissage de formulaires est toujours expérimental et peut échouer.*
 
-Après avoir saisi votre requête, AgenticSeek attribuera le meilleur agent pour la tâche.
+Après avoir saisi votre requête, Spydra attribuera le meilleur agent pour la tâche.
 
 Comme il s'agit d'un prototype initial, le système de routage des agents peut ne pas toujours attribuer l'agent correct à votre requête.
 
@@ -353,8 +353,8 @@ Note: Pour Windows ou macOS, utilisez ipconfig ou ifconfig pour trouver l'adress
 Clonez le dépôt et entrez dans le dossier `server/`.
 
 ```sh
-git clone --depth 1 https://github.com/Fosowl/agenticSeek.git
-cd agenticSeek/llm_server/
+git clone --depth 1 https://github.com/Spyder Solutions/spydra.git
+cd spydra/llm_server/
 ```
 
 Installez les exigences spécifiques au serveur:
@@ -384,7 +384,7 @@ provider_model = deepseek-r1:70b
 provider_server_address = http://x.x.x.x:3333
 ```
 
-Prochaine étape: [Démarrer les services et exécuter AgenticSeek](#démarrer-les-services-et-exécuter)  
+Prochaine étape: [Démarrer les services et exécuter Spydra](#démarrer-les-services-et-exécuter)  
 
 ---
 
@@ -456,7 +456,7 @@ stealth_mode = False
     *   `save_session`: `True` pour sauvegarder l'état de la session actuelle pour une récupération potentielle, `False` sinon.
     *   `speak`: `True` pour activer la sortie vocale de texte vers parole, `False` pour désactiver.
     *   `listen`: `True` pour activer l'entrée vocale de parole vers texte (uniquement mode CLI), `False` pour désactiver.
-    *   `work_dir`: **Critique:** Le répertoire où AgenticSeek lira/écrira des fichiers. **Assurez-vous que ce chemin est valide et accessible sur votre système.**
+    *   `work_dir`: **Critique:** Le répertoire où Spydra lira/écrira des fichiers. **Assurez-vous que ce chemin est valide et accessible sur votre système.**
     *   `jarvis_personality`: `True` pour utiliser des invites système plus "Jarvis-like" (expérimental), `False` pour utiliser des invites standard.
     *   `languages`: Liste de langues séparées par des virgules (ex: `en, zh, fr`). Utilisé pour la sélection de voix TTS (première par défaut) et peut aider le routeur LLM. Pour éviter les inefficacités du routeur, évitez d'utiliser trop de langues ou des langues très similaires.
 *   **Section `[BROWSER]`:**
@@ -472,7 +472,7 @@ Cette section résume les types de fournisseurs de LLM pris en charge. Configure
 | `ollama`                      | `True`     | Fournit LLM localement facilement en utilisant Ollama.                                             | [Configuration pour exécuter LLM localement sur votre machine](#configuration-pour-exécuter-llm-localement-sur-votre-machine) |
 | `lm-studio`                   | `True`     | Fournit LLM localement avec LM-Studio.                                          | [Configuration pour exécuter LLM localement sur votre machine](#configuration-pour-exécuter-llm-localement-sur-votre-machine) |
 | `openai` (pour serveur local)   | `True`     | Connectez-vous à un serveur local exposant une API compatible OpenAI (ex: llama.cpp). | [Configuration pour exécuter LLM localement sur votre machine](#configuration-pour-exécuter-llm-localement-sur-votre-machine) |
-| `server`                      | `False`    | Connectez-vous au serveur LLM auto-hébergé d'AgenticSeek fonctionnant sur une autre machine. | [Configuration pour exécuter LLM sur votre propre serveur](#configuration-pour-exécuter-llm-sur-votre-propre-serveur) |
+| `server`                      | `False`    | Connectez-vous au serveur LLM auto-hébergé d'Spydra fonctionnant sur une autre machine. | [Configuration pour exécuter LLM sur votre propre serveur](#configuration-pour-exécuter-llm-sur-votre-propre-serveur) |
 
 **Fournisseurs d'API (basés sur le cloud):**
 
@@ -641,25 +641,25 @@ Assurez-vous que le local fonctionne (`ollama serve`), que votre `config.ini` co
 
 Oui, avec les fournisseurs Ollama, lm-studio ou server, tous les modèles de parole vers texte, LLM et texte vers parole fonctionnent localement. Les options non locales (OpenAI ou autres API) sont optionnelles.
 
-**Q: Pourquoi devrais-je utiliser AgenticSeek quand j'ai Manus ?**
+**Q: Pourquoi devrais-je utiliser Spydra quand j'ai Manus ?**
 
-Contrairement à Manus, AgenticSeek privilégie l'indépendance des systèmes externes, vous donnant plus de contrôle, de confidentialité et évitant les coûts d'API.
+Contrairement à Manus, Spydra privilégie l'indépendance des systèmes externes, vous donnant plus de contrôle, de confidentialité et évitant les coûts d'API.
 
 **Q: Qui est derrière ce projet ?**
 
 Ce projet a été créé par moi, avec deux amis comme mainteneurs et des contributeurs de la communauté open source sur GitHub. Nous sommes juste des individus passionnés, pas une startup, ni affiliés à aucune organisation.
 
-Tout compte AgenticSeek sur X autre que mon compte personnel (https://x.com/Martin993886460) est un imposteur.
+Tout compte Spydra sur X autre que mon compte personnel (https://x.com/Ahmed Arsalan) est un imposteur.
 
 ## Contribuer
 
-Nous recherchons des développeurs pour améliorer AgenticSeek ! Consultez les problèmes ouverts ou les discussions.
+Nous recherchons des développeurs pour améliorer Spydra ! Consultez les problèmes ouverts ou les discussions.
 
 [Guide de contribution](./docs/CONTRIBUTING.md)
 
 ## Sponsors:
 
-Vous voulez améliorer les capacités d'AgenticSeek avec des fonctionnalités comme la recherche de vols, la planification de voyages ou l'obtention des meilleures offres d'achat ? Envisagez d'utiliser SerpApi pour créer des outils personnalisés qui débloquent plus de fonctionnalités de type Jarvis. Avec SerpApi, vous pouvez accélérer votre agent pour des tâches professionnelles tout en gardant le contrôle total.
+Vous voulez améliorer les capacités d'Spydra avec des fonctionnalités comme la recherche de vols, la planification de voyages ou l'obtention des meilleures offres d'achat ? Envisagez d'utiliser SerpApi pour créer des outils personnalisés qui débloquent plus de fonctionnalités de type Jarvis. Avec SerpApi, vous pouvez accélérer votre agent pour des tâches professionnelles tout en gardant le contrôle total.
 
 <a href="https://serpapi.com/"><img src="./media/banners/sponsor_banner_serpapi.png" height="350" alt="SerpApi Banner" ></a>
 
@@ -671,7 +671,7 @@ Consultez [Contributing.md](./docs/CONTRIBUTING.md) pour apprendre comment inté
 
 ## Mainteneurs:
 
- > [Fosowl](https://github.com/Fosowl) | Heure de Paris 
+ > [Spyder Solutions](https://github.com/Spyder Solutions) | Heure de Paris 
 
  > [antoineVIVIES](https://github.com/antoineVIVIES) | Heure de Taipei 
 
@@ -679,4 +679,4 @@ Consultez [Contributing.md](./docs/CONTRIBUTING.md) pour apprendre comment inté
 
  > [tcsenpai](https://github.com/tcsenpai) et [plitc](https://github.com/plitc) pour avoir aidé à la dockerisation du backend
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Fosowl/agenticSeek&type=Date)](https://www.star-history.com/#Fosowl/agenticSeek&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Spyder Solutions/spydra&type=Date)](https://www.star-history.com/#Spyder Solutions/spydra&Date)

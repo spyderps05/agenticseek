@@ -205,10 +205,10 @@ function App() {
       <header className="header">
         <div className="header-brand">
           <div className="logo-container">
-            <img src={faviconPng} alt="AgenticSeek" className="logo-icon" />
+            <img src={faviconPng} alt="Spydra" className="logo-icon" />
           </div>
           <div className="brand-text">
-            <h1>AgenticSeek</h1>
+            <h1>Spydra</h1>
           </div>
         </div>
         <div className="header-status">
@@ -223,7 +223,7 @@ function App() {
         </div>
         <div className="header-actions">
           <a
-            href="https://github.com/Fosowl/agenticSeek"
+            href="https://github.com/Spyder Solutions/spydra"
             target="_blank"
             rel="noopener noreferrer"
             className="action-button github-link"
